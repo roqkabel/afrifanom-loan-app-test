@@ -1,0 +1,54 @@
+<%- include('partials/head.ejs') %>
+
+<!-- Login Page -->
+<div class="container">
+  <br />
+  <br />
+
+  <div class="auth-layout col-10 m-auto">
+    <div class="d-flex justify-content-between">
+      <h4>Admin Dashboard</h4>
+    </div>
+    <div class="card card-body">
+      <div class="d-flex justify-content-between">
+        <h6 class="text-grey">All Customers</h6>
+        <a class="btn btn-primary" href="/customers/new">Add New Customer</a>
+      </div>
+      <br />
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th class="fs-6" scope="col">#</th>
+            <th class="fs-6" scope="col">Name</th>
+            <th scope="col" class="fs-6">Date Of Birth</th>
+            <th scope="col" class="fs-6">Employment Status</th>
+            <th scope="col" class="fs-6">Employer Name</th>
+            <th scope="col" class="fs-6">Card Type</th>
+            <th scope="col" class="fs-6">Card Number</th>
+            <th scope="col" class="fs-6">Address</th>
+            <th scope="col" class="fs-6">Phone Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% customerList.forEach((customer) => { %>
+            <tr>
+              <th scope="row">1</th>
+              <td><%- customer.fullname %></td>
+              <td><%- customer.birthdate %></td>
+              <td><%- customer.isEmployed %></td>
+              <td><%- customer.employerName %></td>
+              <td><%- customer.cardType %></td>
+              <td><%- customer.cardNumber %></td>
+              <td><%- customer.address %></td>
+              <td><%- customer.phone %></td>
+            
+            </tr>
+            <%  }) %>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <%- include('partials/footer.ejs') %>
+</div>

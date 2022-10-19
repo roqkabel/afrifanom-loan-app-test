@@ -1,0 +1,28 @@
+<% if(typeof success_messages !== 'undefined') { %>
+    <% success_messages.forEach(function(error) { %>
+                      <div class="alert alert-success rounded-pill alert-dismissible fade show d-flex align-items-center" role="alert">
+                        <strong class="mr-2"><img src="/icons/bootstrap-icons-1.0.0/check-circle.svg" /></strong> <%= error %>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+      <% }); %> 
+     <% } %>
+  
+  
+  
+  
+  <% if(typeof error_messages !== 'undefined') { %>
+    <% error_messages.forEach(function(error) { %>
+    
+      <div class="alert  rounded-pill alert-danger  alert-dismissible fade show d-flex align-items-center" role="alert">
+        <strong class="mr-2"><img src="/icons/bootstrap-icons-1.0.0/exclamation-circle.svg" /></strong>  <%= error %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    
+    
+    <% }); %> 
+    
+  <% } %>
